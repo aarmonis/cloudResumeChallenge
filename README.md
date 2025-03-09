@@ -10,5 +10,7 @@ https://cloudresumechallenge.dev/docs/the-challenge/aws/
 # Step 2: Deploy Static Website to AWS (S3)
 https://docs.aws.amazon.com/AmazonS3/latest/userguide/WebsiteHosting.html
 
-- deployed static build in S3
+- deployed static build in S3 (https://antonios-armonis.com/)
     - differences between static websites and dynamic web applications
+    - cloudfront accesses the private S3 bucket
+    - route53 maps the cf distro to my domain
