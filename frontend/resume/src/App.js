@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import VisitorCounter from './components/VisitorCounter';
 
 const Resume = () => {
   const [activeSection, setActiveSection] = useState('all');
@@ -133,6 +134,9 @@ const Resume = () => {
           <h1 className="text-3xl font-bold">{personalInfo.name}</h1>
           <p className="mt-2">{personalInfo.contact}</p>
           <p>{personalInfo.linkedin} | {personalInfo.military}</p>
+
+          {/* Add the VisitorCounter component */}
+          <VisitorCounter />
         </div>
 
         {/* Navigation */}
@@ -143,8 +147,8 @@ const Resume = () => {
                 key={section}
                 onClick={() => setActiveSection(section)}
                 className={`px-4 py-2 rounded-md text-sm font-medium capitalize ${activeSection === section
-                    ? 'bg-blue-600 text-white'
-                    : 'bg-white text-gray-700 hover:bg-gray-200'
+                  ? 'bg-blue-600 text-white'
+                  : 'bg-white text-gray-700 hover:bg-gray-200'
                   }`}
               >
                 {section}
