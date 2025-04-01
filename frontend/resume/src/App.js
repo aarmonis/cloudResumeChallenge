@@ -17,7 +17,7 @@ const Resume = () => {
     {
       institution: "DEREE – The American College of Greece",
       location: "Athens, Greece",
-      degree: "BSc of Arts in Economics (240 ECTS)",
+      degree: "BA in Economics (240 ECTS)",
       period: "Sept. 2019 – May 2025",
       details: [
         "Dissertation: \"Modeling Loan Transitions of Single-Family US Mortgages\" – Developed a Markov framework model to estimate mortgage transition probabilities using Fannie Mae data.",

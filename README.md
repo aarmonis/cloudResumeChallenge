@@ -22,3 +22,9 @@ https://docs.aws.amazon.com/AmazonS3/latest/userguide/WebsiteHosting.html
 - add react component for VisitorCount
 - integrate into App.js in the header.
 - TODO modularize all components.
+
+# Step 4: Add API endpoint for visitor count
+- Setup fastapi with dummy data to test
+- Deploy the service
+
+# Step 5: Setup VisitorCount Database with DynamoDB
