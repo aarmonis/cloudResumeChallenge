@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import VisitorCounter from './components/VisitorCounter';
+import { FaLinkedin, FaGithub, FaEnvelope, FaPhone, FaShieldAlt } from 'react-icons/fa';
 
 const Resume = () => {
   const [activeSection, setActiveSection] = useState('all');
@@ -8,8 +9,10 @@ const Resume = () => {
 
   const personalInfo = {
     name: "ANTONIOS ARMONIS",
-    contact: "+30 6930796757 | ant.armonis@gmail.com",
-    linkedin: "www.linkedin.com/in/antonios-armonis",
+    email: "ant.armonis@gmail.com",
+    phone: "+30 6930796757",
+    linkedin: "www.linkedin.com/in/antonios-armonis-304544104",
+    github: "github.com/aarmonis",
     military: "Military Service: Completed"
   };
 
@@ -17,10 +20,13 @@ const Resume = () => {
     {
       institution: "DEREE – The American College of Greece",
       location: "Athens, Greece",
-      degree: "BA in Economics (240 ECTS)",
+      degree: "BA in Economics",
       period: "Sept. 2019 – May 2025",
       details: [
-        "Dissertation: \"Modeling Loan Transitions of Single-Family US Mortgages\" – Developed a Markov framework model to estimate mortgage transition probabilities using Fannie Mae data.",
+        {
+          text: "Dissertation: \"Modeling Loan Transitions of Single-Family US Mortgages\" – Developed a Markov framework model to estimate mortgage transition probabilities using Fannie Mae data.",
+          link: "https://accuria.com/machine-learning-for-transitions-and-modifications-in-us-single-family-mortgages/"
+        },
         "Key Courses: Econometrics, Credit and Lending, Money and Banking, Financial Modeling.",
         "Research: EEFA Research Lab – Contributed to NLP applications, experiment design, and statistical modeling."
       ]
@@ -46,7 +52,7 @@ const Resume = () => {
       company: "Accuria Ltd",
       location: "London, UK",
       position: "Data Scientist (Work Placement)",
-      period: "Sep. 2024 – Mar. 2025",
+      period: "Sep. 2024 – Present",
       achievements: [
         "Designed a scalable data pipeline in R using DuckDB and GitHub Actions to process Fannie Mae loan performance data, achieving 70% reduction in processing time.",
         "Optimized ETL workflow using Parquet files stored in AWS S3, enhancing data accessibility and analytics efficiency.",
@@ -59,7 +65,7 @@ const Resume = () => {
       company: "UNI-PHARMA Pharmaceutical Laboratories S.A.",
       location: "Athens, Greece",
       position: "Intern Data Analyst at Validation Department",
-      period: "May 2022 – Sep. 2022",
+      period: "June 2022 – Aug. 2022",
       achievements: [
         "Created visualizations using Seaborn and Highcharter for quick identification of data trends.",
         "Developed Quality Assurance KPI dashboards in Python to enhance operational intelligence.",
@@ -70,7 +76,7 @@ const Resume = () => {
       company: "Ulysses-Systems",
       location: "Piraeus, Greece",
       position: "Intern Software Developer",
-      period: "May 2021 – Sep. 2021",
+      period: "June 2021 – Aug 2021",
       achievements: [
         "Labeled datasets for ML-driven email classification models.",
         "Prepared live software demos, enhancing client engagement."
@@ -82,7 +88,7 @@ const Resume = () => {
     {
       organization: "Experimental Economics, Fintech, & Analytics Lab - ACG",
       position: "Junior Researcher",
-      period: "Aug. 2024 – Present",
+      period: "Aug 2024 – Present",
       details: [
         "Leveraged pre-trained transformers and NLP techniques to analyze sentiment in Coldplay lyrics.",
         "Contributed to experimental design and drafting of grant applications exploring LLMs in business solutions."
@@ -92,32 +98,42 @@ const Resume = () => {
 
   const projects = [
     {
-      name: "Capstone GADAC Project",
-      description: "Implemented a machine learning model to predict employee attrition, enhancing retention strategies."
+      name: "Salifort Employee Attrition",
+      description: "Implemented a machine learning model to predict employee attrition, enhancing retention strategies.",
+      link: "https://github.com/aarmonis/salifort_employee_attrition"
     },
     {
       name: "TikTok Comments Classification Model",
-      description: "Developed a Random Forest model to categorize TikTok comments for content moderation."
+      description: "Developed a Random Forest model to categorize TikTok comments for content moderation.",
+      link: "https://github.com/aarmonis/tiktok_claim_classifier"
     },
     {
       name: "Athex Financial Retriever",
-      description: "Built a RAG system to chat with financial statement data from Athens Stock Exchange companies."
+      description: "Built a RAG system to chat with financial statement data from Athens Stock Exchange companies.",
+      link: "https://github.com/aarmonis/athex-financial-retriever"
     },
     {
       name: "Portfolio Optimization",
-      description: "Designed a Shiny application for portfolio optimization with financial data retrieval and visualization."
+      description: "Designed a Shiny application for portfolio optimization with financial data retrieval and visualization.",
+      link: "https://github.com/aarmonis/Markowitz_Optimization_R_shinny_UI"
     },
     {
       name: "Customer Churn Prediction",
-      description: "Developed a Naive Bayes model to predict bank customer churn."
+      description: "Developed a Naive Bayes model to predict bank customer churn.",
+      link: "https://github.com/aarmonis/customer-churn-prediction"
     }
   ];
 
   const skills = {
     languages: ["Python", "R", "SQL"],
     libraries: ["FastAPI", "PyTorch", "scikit-learn", "Pydantic", "LangChain", "Bedrock", "pandas", "NumPy", "dplyr", "data.table", "DBI", "Shiny"],
-    techStacks: ["NLP", "DuckDB", "GitHub Actions", "AWS S3", "Parquet"],
-    certifications: ["Google Advanced Data Analytics Certificate (GADAC)"]
+    Technologies: ["NLP", "DuckDB", "GitHub Actions", "AWS S3", "Parquet"],
+    certifications: [
+      {
+        name: "Google Advanced Data Analytics Certificate",
+        link: "https://www.coursera.org/account/accomplishments/professional-cert/AHZGLQ4LXPS5?utm_source=ln&utm_medium=certificate&utm_content=cert_image&utm_campaign=pdf_header_button&utm_product=prof"
+      }
+    ]
   };
 
   const activities = ["Running", "Agriculture", "Travel", "Reading"];
@@ -130,10 +146,38 @@ const Resume = () => {
     <div className="min-h-screen bg-gray-50 py-8 px-4">
       <div className="max-w-4xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
         {/* Header */}
-        <div className="bg-blue-600 text-white p-6">
+        <div className="bg-blue-900 text-white p-6">
           <h1 className="text-3xl font-bold">{personalInfo.name}</h1>
-          <p className="mt-2">{personalInfo.contact}</p>
-          <p>{personalInfo.linkedin} | {personalInfo.military}</p>
+
+          {/* Contact info with icons */}
+          <div className="mt-3 flex flex-wrap items-center gap-4">
+            <div className="flex items-center">
+              <FaPhone className="mr-2 text-blue-200" size={16} />
+              <span>{personalInfo.phone}</span>
+            </div>
+            <div className="flex items-center">
+              <FaEnvelope className="mr-2 text-blue-200" size={16} />
+              <a href={`mailto:${personalInfo.email}`} className="hover:underline hover:text-blue-200">
+                {personalInfo.email}
+              </a>
+            </div>
+            <div className="flex items-center">
+              <FaLinkedin className="mr-2 text-blue-200" size={18} />
+              <a href={`https://${personalInfo.linkedin}`} target="_blank" rel="noopener noreferrer" className="hover:underline hover:text-blue-200">
+                LinkedIn
+              </a>
+            </div>
+            <div className="flex items-center">
+              <FaGithub className="mr-2 text-blue-200" size={18} />
+              <a href={`https://${personalInfo.github}`} target="_blank" rel="noopener noreferrer" className="hover:underline hover:text-blue-200">
+                GitHub
+              </a>
+            </div>
+            <div className="flex items-center">
+              <FaShieldAlt className="mr-2 text-blue-200" size={16} />
+              <span>{personalInfo.military}</span>
+            </div>
+          </div>
 
           {/* Add the VisitorCounter component */}
           <VisitorCounter />
@@ -178,7 +222,24 @@ const Resume = () => {
                   {edu.details.length > 0 && (
                     <ul className="list-disc list-inside mt-2 text-gray-700 text-sm">
                       {edu.details.map((detail, idx) => (
-                        <li key={idx} className="mb-1">{detail}</li>
+                        <li key={idx} className="mb-1">
+                          {typeof detail === 'string' ? (
+                            detail
+                          ) : (
+                            <>
+                              {detail.text.split('"')[0]}
+                              "<a
+                                href={detail.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-blue-600 hover:underline"
+                              >
+                                {detail.text.split('"')[1]}
+                              </a>"
+                              {detail.text.split('"')[2]}
+                            </>
+                          )}
+                        </li>
                       ))}
                     </ul>
                   )}
@@ -245,7 +306,20 @@ const Resume = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {projects.map((project, index) => (
                   <div key={index} className="bg-gray-50 p-4 rounded-lg">
-                    <h3 className="font-semibold text-blue-600">{project.name}</h3>
+                    <h3 className="font-semibold text-blue-600">
+                      {project.link ? (
+                        <a
+                          href={project.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="hover:underline"
+                        >
+                          {project.name}
+                        </a>
+                      ) : (
+                        project.name
+                      )}
+                    </h3>
                     <p className="text-sm text-gray-700">{project.description}</p>
                   </div>
                 ))}
@@ -271,7 +345,7 @@ const Resume = () => {
                 <div>
                   <h3 className="font-semibold text-blue-600 mb-2">Tech Stacks</h3>
                   <div className="flex flex-wrap gap-2">
-                    {skills.techStacks.map((tech, index) => (
+                    {skills.Technologies.map((tech, index) => (
                       <span key={index} className="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-sm">
                         {tech}
                       </span>
@@ -293,7 +367,18 @@ const Resume = () => {
                   <div className="flex flex-wrap gap-2">
                     {skills.certifications.map((cert, index) => (
                       <span key={index} className="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-sm">
-                        {cert}
+                        {typeof cert === 'string' ? (
+                          cert
+                        ) : (
+                          <a
+                            href={cert.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:underline"
+                          >
+                            {cert.name}
+                          </a>
+                        )}
                       </span>
                     ))}
                   </div>
